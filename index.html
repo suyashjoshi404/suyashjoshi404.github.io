@@ -4,80 +4,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Suyash Joshi — MS by Research student at IIT Bombay working on data prefetching for JVM workloads." />
   <title>Suyash Joshi</title>
 
-  <!-- Elegant font: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
-  <div class="layout">
-
-    <aside class="sidebar">
-      <img src="suyash.jpeg" alt="Suyash Joshi" class="profile-pic" />
-      <h1 class="name">Suyash Joshi</h1>
-      <p class="title">MS by Research<br>@ IIT Bombay</p>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="Suyash Joshi, home">Home</a>
       <nav class="site-nav" aria-label="Portfolio navigation">
-        <!-- <a href="index.html" aria-current="page">Home</a> -->
-        <a href="index_record.html">My Music Taste 🎧</a>
+        <a href="projects.html">Projects</a>
+        <a class="magic-link" href="index_record.html">
+          <span class="magic">
+            <span class="magic-star" aria-hidden="true">
+              <svg viewBox="0 0 512 512"><path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78 42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2 171.2 42.78C504.6 235.2 512 244.6 512 255.1z" /></svg>
+            </span>
+            <span class="magic-star" aria-hidden="true">
+              <svg viewBox="0 0 512 512"><path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78 42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2 171.2 42.78C504.6 235.2 512 244.6 512 255.1z" /></svg>
+            </span>
+            <span class="magic-star" aria-hidden="true">
+              <svg viewBox="0 0 512 512"><path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78 42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2 171.2 42.78C504.6 235.2 512 244.6 512 255.1z" /></svg>
+            </span>
+            <span class="magic-text">My Music Taste</span>
+          </span>
+          <span aria-hidden="true">🎧</span>
+        </a>
       </nav>
-    </aside>
+    </header>
 
-    <main class="content">
+    <div class="page-content">
+      <div class="intro-column">
+        <section class="hero" aria-labelledby="hero-title">
+          <h1 id="hero-title">Suyash Joshi.</h1>
+          <p class="hero-role"><span>MS by Research</span> @ IIT Bombay</p>
+        </section>
 
-      <section>
-        <h2>About</h2>
-        <p>
-          I'm an MS student at IIT Bombay and a part of CASPER research group. I currently work with Prof. Biswa on data prefetching for JVM workloads.
-        </p>
-      </section>
+        <section class="about-block" aria-labelledby="about-heading">
+          <p class="about-statement">
+            <span class="about-title" id="about-heading">About</span> — I'm an MS student at IIT Bombay and a part of CASPER research group. I currently work with Prof. Biswa on data prefetching for JVM workloads.
+          </p>
+        </section>
+      </div>
 
-      <section>
-        <h2>Education</h2>
-        <p>
-          MS by Research, CSE · IIT Bombay (2025–Present)<br>
-          B.Tech, CSE · SRM Institute of Science and Technology (2020–2024)
-        </p>
-      </section>
+      <div class="sections">
+        <section class="info-section education-section" aria-labelledby="education-heading">
+          <header class="section-heading">
+            <p class="section-label">02 / Education</p>
+            <h2 id="education-heading">Education</h2>
+          </header>
+          <div class="entry-list">
+            <article class="entry">
+              <p>MS by Research, CSE · IIT Bombay</p>
+              <p class="entry-meta">2025–Present</p>
+            </article>
+            <article class="entry">
+              <p>B.Tech, CSE · SRM Institute of Science and Technology</p>
+              <p class="entry-meta">2020–2024</p>
+            </article>
+          </div>
+        </section>
 
-      <section>
-        <h2>Work Experience</h2>
-        <p>
-          Fiserv · Technology Intern<br>
-          Jan 2024 – Sep 2024 · Pune
-        </p>
-      </section>
+        <section class="info-section work-section" aria-labelledby="work-heading">
+          <header class="section-heading">
+            <p class="section-label">03 / Experience</p>
+            <h2 id="work-heading">Work Experience</h2>
+          </header>
+          <div class="entry-list">
+            <article class="entry">
+              <p>Fiserv · Technology Intern</p>
+              <p class="entry-meta">Jan 2024 – Sep 2024 · Pune</p>
+            </article>
+          </div>
+        </section>
 
-      <section>
-        <h2>Courses</h2>
-        <p>
-          CS 683: Advanced Computer Architecture · Autumn 2025-26<br>
-          CS 744: Design and Engineering of Computing Systems · Autumn 2025-26<br>
-          CS 6004: Code Optimization for Object-Oriented Languages · Spring 2025-26<br>
-          CS 794: Systems for Machine Learning · Spring 2025-26<br>
-          CS 632: Advanced Database Management Systems · Autumn 2026-27
-        </p>
-      </section>
+        <section class="info-section courses-section" aria-labelledby="courses-heading">
+          <header class="section-heading">
+            <p class="section-label">04 / Coursework</p>
+            <h2 id="courses-heading">Courses</h2>
+          </header>
+          <ol class="course-list">
+            <li><span>CS 683: Advanced Computer Architecture</span><span>Autumn 2025-26</span></li>
+            <li><span>CS 744: Design and Engineering of Computing Systems</span><span>Autumn 2025-26</span></li>
+            <li><span>CS 6004: Code Optimization for Object-Oriented Languages</span><span>Spring 2025-26</span></li>
+            <li><span>CS 794: Systems for Machine Learning</span><span>Spring 2025-26</span></li>
+            <li><span>CS 632: Advanced Database Management Systems</span><span>Autumn 2026-27</span></li>
+          </ol>
+        </section>
 
-      <section>
-        <h2>Contact</h2>
-        <p>
-          <a href="mailto:25m2130@iit.ac.in">suyashjoshi@cse.iitb.ac.in</a><br>
-          <a href="mailto:suyash4502@gmail.com">suyash4502@gmail.com</a><br>
-          <a href="https://github.com/suyashjoshi404" target="_blank">GitHub</a> ·
-          <a href="https://linkedin.com/in/suyashjoshi4502" target="_blank">LinkedIn</a>
-        </p>
-      </section>
+        <section class="info-section contact-section" aria-labelledby="contact-heading">
+          <header class="section-heading">
+            <p class="section-label">05 / Contact</p>
+            <h2 id="contact-heading">Contact</h2>
+          </header>
+          <div class="contact-links">
+            <a href="mailto:25m2130@iit.ac.in">suyashjoshi@cse.iitb.ac.in <span aria-hidden="true">↗</span></a>
+            <a href="mailto:suyash4502@gmail.com">suyash4502@gmail.com <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/suyashjoshi404" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://linkedin.com/in/suyashjoshi4502" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </div>
+    </div>
 
-      <footer>
-        <p>Last updated: August 2026</p>
-      </footer>
+    <footer>
+      <p>Last updated: October 2026</p>
+    </footer>
+  </main>
 
-    </main>
+  <script>
+    (() => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  </div>
+      const randomBetween = (min, max) =>
+        Math.floor(Math.random() * (max - min + 1)) + min;
 
+      const moveStar = (star) => {
+        star.style.setProperty("--star-left", `${randomBetween(-8, 100)}%`);
+        star.style.setProperty("--star-top", `${randomBetween(-45, 75)}%`);
+        star.style.animation = "none";
+        star.offsetHeight;
+        star.style.animation = "";
+      };
+
+      document.querySelectorAll(".magic-star").forEach((star, index) => {
+        setTimeout(() => {
+          moveStar(star);
+          setInterval(() => moveStar(star), 1000);
+        }, index * 330);
+      });
+    })();
+  </script>
 </body>
+
 </html>

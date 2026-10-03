@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects by Suyash Joshi — coming soon." />
+  <title>Projects · Suyash Joshi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --dos-blue: #000084;
+      --dos-white: #f4f1df;
+      --dos-cursor: #ddd27a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: var(--dos-blue);
+      color: var(--dos-white);
+      font-family: "VT323", "Courier New", monospace;
+      -webkit-font-smoothing: none;
+      text-rendering: geometricPrecision;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 3px,
+          rgba(0, 0, 0, 0.08) 4px
+        ),
+        radial-gradient(ellipse at center, transparent 58%, rgba(0, 0, 0, 0.16) 100%);
+      mix-blend-mode: multiply;
+    }
+
+    .terminal {
+      position: absolute;
+      top: 25%;
+      left: clamp(1.5rem, 3.5vw, 4rem);
+      width: calc(100% - clamp(3rem, 7vw, 8rem));
+    }
+
+    .terminal-line {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: 0.025em;
+      text-shadow: 2px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 0.53em;
+      height: 0.9em;
+      margin-left: 0.12em;
+      vertical-align: -0.08em;
+      background: var(--dos-cursor);
+      animation: cursor-blink 900ms steps(1, end) infinite;
+    }
+
+    @keyframes cursor-blink {
+      50% { opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .terminal {
+        top: 22%;
+      }
+
+      .terminal-line {
+        font-size: clamp(1.65rem, 8vw, 2.5rem);
+        line-height: 1.25;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cursor {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="terminal">
+    <p class="terminal-line" aria-label="Currently procrastinating... projects coming soon.">
+      <span id="typed-text" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
+      <noscript>Currently procrastinating... projects coming soon.</noscript>
+    </p>
+  </main>
+
+  <script>
+    (() => {
+      const message = "Currently procrastinating... projects coming soon.";
+      const output = document.getElementById("typed-text");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion) {
+        output.textContent = message;
+        return;
+      }
+
+      let index = 0;
+
+      const typeNextCharacter = () => {
+        output.textContent = message.slice(0, index += 1);
+
+        if (index < message.length) {
+          const character = message[index - 1];
+          const delay = character === "." ? 190 : 62 + Math.random() * 48;
+          setTimeout(typeNextCharacter, delay);
+        }
+      };
+
+      setTimeout(typeNextCharacter, 550);
+    })();
+  </script>
+</body>
+
+</html>
