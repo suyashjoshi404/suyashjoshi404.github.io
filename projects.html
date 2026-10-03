@@ -61,6 +61,16 @@
       width: calc(100% - clamp(3rem, 7vw, 8rem));
     }
 
+    .home-link {
+      position: fixed;
+      top: clamp(1rem, 3vw, 2rem);
+      left: clamp(1.5rem, 3.5vw, 4rem);
+      color: var(--dos-white);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      text-decoration: underline;
+      text-underline-offset: 0.12em;
+    }
+
     .terminal-line {
       margin: 0;
       font-size: clamp(2rem, 4.2vw, 4.5rem);
@@ -68,6 +78,11 @@
       line-height: 1.15;
       letter-spacing: 0.025em;
       text-shadow: 2px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .home-link:focus-visible {
+      outline: 2px solid var(--dos-cursor);
+      outline-offset: 0.2em;
     }
 
     .cursor {
@@ -104,16 +119,17 @@
 </head>
 
 <body>
+  <a class="home-link" href="index.html">&lt; Back to home</a>
   <main class="terminal">
-    <p class="terminal-line" aria-label="Currently procrastinating... projects coming soon.">
+    <p class="terminal-line" aria-label="Currently procrastinating... will add projects later :P">
       <span id="typed-text" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
-      <noscript>Currently procrastinating... projects coming soon.</noscript>
+      <noscript>Currently procrastinating... will add projects later :P</noscript>
     </p>
   </main>
 
   <script>
     (() => {
-      const message = "Currently procrastinating... projects coming soon.";
+      const message = "Currently procrastinating... will add projects later :P";
       const output = document.getElementById("typed-text");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

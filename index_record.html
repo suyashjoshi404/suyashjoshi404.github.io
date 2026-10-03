@@ -55,11 +55,12 @@
   </main>
 
   <nav class="dock-wrap" aria-label="Record collection"><ul class="dock">
-    <li class="dock-item"><button class="album-button" type="button" data-record="0" aria-pressed="true"><span class="thumb-frame"><img src="img/ninajirachi_cover.jpg" alt=""></span><span class="sr-only">Play Ninajirachi — It’s You</span></button><span class="tooltip">It’s You</span></li>
-    <li class="dock-item"><button class="album-button" type="button" data-record="1" aria-pressed="false"><span class="thumb-frame"><img src="img/mfdoom_cover.jpg" alt=""></span><span class="sr-only">Play MF DOOM — Doomsday</span></button><span class="tooltip">Doomsday</span></li>
-    <li class="dock-item"><button class="album-button" type="button" data-record="2" aria-pressed="false"><span class="thumb-frame"><img src="img/nujabes_cover.jpg" alt=""></span><span class="sr-only">Play Nujabes — Blessing It</span></button><span class="tooltip">Blessing It</span></li>
-    <li class="dock-item"><button class="album-button" type="button" data-record="3" aria-pressed="false"><span class="thumb-frame"><img src="img/fuel_cover.jpg" alt=""></span><span class="sr-only">Play Fuel — Hemorrhage</span></button><span class="tooltip">Hemorrhage</span></li>
-    <li class="dock-item"><button class="album-button" type="button" data-record="4" aria-pressed="false"><span class="thumb-frame"><img src="img/egypt_central.jpg" alt=""></span><span class="sr-only">Play Egypt Central — You Make Me Sick</span></button><span class="tooltip">You Make Me Sick</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="0" aria-pressed="true"><span class="thumb-frame"><img src="img/ninajirachi_cover.jpg" alt=""></span><span class="sr-only">Select Ninajirachi — It’s You</span></button><span class="tooltip">It’s You</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="1" aria-pressed="false"><span class="thumb-frame"><img src="img/hikaru_cover.jpg" alt=""></span><span class="sr-only">Select Hikaru Utada — One Last Kiss</span></button><span class="tooltip">One Last Kiss</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="2" aria-pressed="false"><span class="thumb-frame"><img src="img/lp_cover.jpg" alt=""></span><span class="sr-only">Select Linkin Park — Pushing Me Away</span></button><span class="tooltip">Pushing Me Away</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="3" aria-pressed="false"><span class="thumb-frame"><img src="img/BB_cover.jpg" alt=""></span><span class="sr-only">Select Breaking Benjamin — The Diary of Jane</span></button><span class="tooltip">The Diary of Jane</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="4" aria-pressed="false"><span class="thumb-frame"><img src="img/fuel_cover.jpg" alt=""></span><span class="sr-only">Select Fuel — Hemorrhage</span></button><span class="tooltip">Hemorrhage</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="5" aria-pressed="false"><span class="thumb-frame"><img src="img/egypt_central.jpg" alt=""></span><span class="sr-only">Select Egypt Central — You Make Me Sick</span></button><span class="tooltip">You Make Me Sick</span></li>
   </ul></nav>
 
   <footer class="timeline" aria-hidden="true"><span class="timeline-message">‹‹ select a record ››</span></footer>
@@ -67,8 +68,9 @@
   <script>
     const records=[
       {artist:"Ninajirachi",title:"It’s You",cover:"img/ninajirachi_cover.jpg",vinyl:"img/ninajirachi_vinyl.png",audio:"audio/ItsYou.mp3"},
-      {artist:"MF DOOM",title:"Doomsday",cover:"img/mfdoom_cover.jpg",vinyl:"img/mfdoom_record.png",audio:"audio/Doomsday.mp3"},
-      {artist:"Nujabes",title:"Blessing It",cover:"img/nujabes_cover.jpg",vinyl:"img/nujabes_record.png",audio:"audio/BlessingIt.mp3"},
+      {artist:"Hikaru Utada",title:"One Last Kiss",cover:"img/hikaru_cover.jpg",vinyl:"img/hikaru_vinyl.png",audio:"audio/OneLastKiss.mp3"},
+      {artist:"Linkin Park",title:"Pushing Me Away",cover:"img/lp_cover.jpg",vinyl:"img/lp_vinyl.png",audio:"audio/PushingMeAway.mp3"},
+      {artist:"Breaking Benjamin",title:"The Diary of Jane",cover:"img/BB_cover.jpg",vinyl:"img/BB_vinyl.png",audio:"audio/TheDiaryOfJane.mp3"},
       {artist:"Fuel",title:"Hemorrhage (In My Hands)",cover:"img/fuel_cover.jpg",vinyl:"img/fuel_record.webp",audio:"audio/Hemorrhage.mp3"},
       {artist:"Egypt Central",title:"You Make Me Sick",cover:"img/egypt_central.jpg",vinyl:"img/egypt_central_vinyl.png",audio:"audio/YouMakeMeSick.mp3"}
     ];
@@ -78,11 +80,11 @@
     function setPlaying(playing){body.classList.toggle("is-playing",playing);playButton.setAttribute("aria-label",`${playing?"Pause":"Play"} ${records[activeIndex].title}`)}
     function stopAll(exceptIndex=-1){players.forEach((player,index)=>{if(index!==exceptIndex){player.pause();player.currentTime=0}})}
     function toggleAudio(){const player=players[activeIndex];if(!player.paused){player.pause();setPlaying(false);return}stopAll(activeIndex);player.volume=.72;player.play().then(()=>setPlaying(true)).catch(()=>setPlaying(false))}
-    function renderRecord(index,autoplay=false){const record=records[index];clearTimeout(transitionTimer);coverWrap.classList.add("is-changing");vinylWrap.classList.add("is-changing");trackCopy.classList.add("is-changing");stopAll();setPlaying(false);activeIndex=index;recordButtons.forEach((button,i)=>button.setAttribute("aria-pressed",String(i===index)));
-      transitionTimer=window.setTimeout(()=>{cover.src=record.cover;cover.alt=`${record.artist} album cover`;vinyl.src=record.vinyl;artist.textContent=record.artist;title.textContent=record.title;playButton.setAttribute("aria-label",`Play ${record.title}`);requestAnimationFrame(()=>{coverWrap.classList.remove("is-changing");vinylWrap.classList.remove("is-changing");trackCopy.classList.remove("is-changing")});if(autoplay)toggleAudio()},230)}
-    recordButtons.forEach(button=>button.addEventListener("click",()=>{const index=Number(button.dataset.record);index===activeIndex?toggleAudio():renderRecord(index,true)}));
-    playButton.addEventListener("click",toggleAudio);document.querySelector("[data-previous]").addEventListener("click",()=>renderRecord((activeIndex-1+records.length)%records.length,true));document.querySelector("[data-next]").addEventListener("click",()=>renderRecord((activeIndex+1)%records.length,true));
-    document.addEventListener("keydown",event=>{if(event.code==="Space"&&!event.target.closest("button, a")){event.preventDefault();toggleAudio()}if(event.key==="ArrowLeft")renderRecord((activeIndex-1+records.length)%records.length,false);if(event.key==="ArrowRight")renderRecord((activeIndex+1)%records.length,false)});
+    function renderRecord(index){const record=records[index];clearTimeout(transitionTimer);coverWrap.classList.add("is-changing");vinylWrap.classList.add("is-changing");trackCopy.classList.add("is-changing");stopAll();setPlaying(false);activeIndex=index;recordButtons.forEach((button,i)=>button.setAttribute("aria-pressed",String(i===index)));
+      transitionTimer=window.setTimeout(()=>{cover.src=record.cover;cover.alt=`${record.artist} album cover`;vinyl.src=record.vinyl;artist.textContent=record.artist;title.textContent=record.title;playButton.setAttribute("aria-label",`Play ${record.title}`);requestAnimationFrame(()=>{coverWrap.classList.remove("is-changing");vinylWrap.classList.remove("is-changing");trackCopy.classList.remove("is-changing")})},230)}
+    recordButtons.forEach(button=>button.addEventListener("click",()=>renderRecord(Number(button.dataset.record))));
+    playButton.addEventListener("click",toggleAudio);document.querySelector("[data-previous]").addEventListener("click",()=>renderRecord((activeIndex-1+records.length)%records.length));document.querySelector("[data-next]").addEventListener("click",()=>renderRecord((activeIndex+1)%records.length));
+    document.addEventListener("keydown",event=>{if(event.key==="ArrowLeft")renderRecord((activeIndex-1+records.length)%records.length);if(event.key==="ArrowRight")renderRecord((activeIndex+1)%records.length)});
   </script>
 </body>
 </html>
