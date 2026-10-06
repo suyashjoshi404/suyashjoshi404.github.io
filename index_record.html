@@ -40,14 +40,14 @@
   <main class="listening-room">
     <div class="player-stack">
       <section class="album-object" aria-label="Selected record">
-        <div class="vinyl-wrap"><img class="vinyl" data-vinyl src="img/ninajirachi_vinyl.png" alt=""></div>
-        <div class="cover-wrap"><img class="cover-art" data-cover src="img/ninajirachi_cover.jpg" alt="Ninajirachi album cover"></div>
+        <div class="vinyl-wrap"><img class="vinyl" data-vinyl src="img/canons_vinyl.png" alt=""></div>
+        <div class="cover-wrap"><img class="cover-art" data-cover src="img/canons_cover.jpg" alt="Cannons album cover"></div>
       </section>
       <section class="now-playing" aria-label="Audio player">
-        <div class="track-copy" aria-live="polite"><span class="artist-name" data-artist>Ninajirachi</span><span class="song-name" data-title>It’s You</span></div>
+        <div class="track-copy" aria-live="polite"><span class="artist-name" data-artist>Cannons</span><span class="song-name" data-title>Baby</span></div>
         <div class="controls">
           <button class="control" type="button" data-previous aria-label="Previous record"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6V6Zm3 6 9-6v12l-9-6Z"/></svg></button>
-          <button class="control play-toggle" type="button" data-play aria-label="Play It’s You"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z"/></svg></button>
+          <button class="control play-toggle" type="button" data-play aria-label="Play Baby"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z"/></svg></button>
           <button class="control" type="button" data-next aria-label="Next record"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2V6ZM6 6l9 6-9 6V6Z"/></svg></button>
         </div>
       </section>
@@ -55,7 +55,7 @@
   </main>
 
   <nav class="dock-wrap" aria-label="Record collection"><ul class="dock">
-    <li class="dock-item"><button class="album-button" type="button" data-record="0" aria-pressed="true"><span class="thumb-frame"><img src="img/ninajirachi_cover.jpg" alt=""></span><span class="sr-only">Select Ninajirachi — It’s You</span></button><span class="tooltip">It’s You</span></li>
+    <li class="dock-item"><button class="album-button" type="button" data-record="0" aria-pressed="true"><span class="thumb-frame"><img src="img/canons_cover.jpg" alt=""></span><span class="sr-only">Select Cannons — Baby</span></button><span class="tooltip">Baby</span></li>
     <li class="dock-item"><button class="album-button" type="button" data-record="1" aria-pressed="false"><span class="thumb-frame"><img src="img/hikaru_cover.jpg" alt=""></span><span class="sr-only">Select Hikaru Utada — One Last Kiss</span></button><span class="tooltip">One Last Kiss</span></li>
     <li class="dock-item"><button class="album-button" type="button" data-record="2" aria-pressed="false"><span class="thumb-frame"><img src="img/lp_cover.jpg" alt=""></span><span class="sr-only">Select Linkin Park — Pushing Me Away</span></button><span class="tooltip">Pushing Me Away</span></li>
     <li class="dock-item"><button class="album-button" type="button" data-record="3" aria-pressed="false"><span class="thumb-frame"><img src="img/BB_cover.jpg" alt=""></span><span class="sr-only">Select Breaking Benjamin — The Diary of Jane</span></button><span class="tooltip">The Diary of Jane</span></li>
@@ -67,7 +67,7 @@
 
   <script>
     const records=[
-      {artist:"Ninajirachi",title:"It’s You",cover:"img/ninajirachi_cover.jpg",vinyl:"img/ninajirachi_vinyl.png",audio:"audio/ItsYou.mp3"},
+      {artist:"Cannons",title:"Baby",cover:"img/canons_cover.jpg",vinyl:"img/canons_vinyl.png",audio:"audio/canons.mp3"},
       {artist:"Hikaru Utada",title:"One Last Kiss",cover:"img/hikaru_cover.jpg",vinyl:"img/hikaru_vinyl.png",audio:"audio/OneLastKiss.mp3"},
       {artist:"Linkin Park",title:"Pushing Me Away",cover:"img/lp_cover.jpg",vinyl:"img/lp_vinyl.png",audio:"audio/PushingMeAway.mp3"},
       {artist:"Breaking Benjamin",title:"The Diary of Jane",cover:"img/BB_cover.jpg",vinyl:"img/BB_vinyl.png",audio:"audio/TheDiaryOfJane.mp3"},
